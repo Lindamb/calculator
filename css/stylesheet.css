@@ -1,0 +1,39 @@
+.wrap {
+	max-width: 230px;
+	margin: 10% auto;
+}
+
+form {
+	width: 100%;
+}
+
+table {
+	width: 100%;
+	background-color: #f2f2f2;
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.38);
+	-moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.38);
+	box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.38);
+	padding: 20px 10px;
+}
+
+#calc_result {
+	height: 40px;
+    background-color: #eae6e6;
+
+}
+
+.calc_btn, .c_btn, .neg_btn {
+    min-width: 55px;
+    min-height: 50px;
+    background-color: #999;
+    border: none;
+    font-size: 25px;
+}
+
+#sum {
+	background-color: #de9b14;
+}
+
+#ce {
+	background-color: #59bbe4;
+	}

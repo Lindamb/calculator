@@ -4,7 +4,7 @@ include('Classes/CalculateClass.php');
 
 /* KOLLAR OM ETT AJAX-REQUEST KÖRS */
 if(empty($_SERVER['HTTP_X_REQUESTED_WITH'])) {
-	include('View/form.php');
+	include('Templates/form.php');
 }
 include('Controller/calcController.php');
 

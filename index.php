@@ -6,12 +6,9 @@ include('Classes/CalculateClass.php');
 if(empty($_SERVER['HTTP_X_REQUESTED_WITH'])) {
 	include('Templates/form.php');
 }
-include('Controller/calcController.php');
+include('Classes/calcController.php');
 
 if (isset($_POST['calc_result'])) {
-
-
-
 
 	$objMathString = new calcController($_POST['calc_result']);
 	$post = $_POST['calc_result'];

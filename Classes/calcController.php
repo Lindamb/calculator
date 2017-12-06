@@ -7,7 +7,6 @@ class calcController {
 	public function __construct($post) {
 		$this->post = $post;
 	}
-	
 
 	public function getOperator($post) {
 
@@ -18,7 +17,6 @@ class calcController {
 			$this->operator = "--";
 			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
 			$this->operator;
-			$this->numberTwo;
 
 			if($this->operator = "--") {
 				$this->operator = "+";

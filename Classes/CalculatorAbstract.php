@@ -1,8 +1,6 @@
 <?php
 include('CalculatorInterface.php');
-
 abstract class CalculatorAbstract implements CalculatorInterface {
-
     protected $numberOne;
     protected $numberTwo;
     protected $output;
@@ -13,37 +11,21 @@ abstract class CalculatorAbstract implements CalculatorInterface {
         $this->output = $numberOne + $numberTwo;
     }
     public function substractNumbers($numberOne, $numberTwo) {
-        echo "substractNumbers körs";
         $this->output = $numberOne - $numberTwo;        
             $this->output = json_encode($this->output); 
             echo json_encode($this->output);
     }
     public function divideNumbers($numberOne, $numberTwo) {
-        echo "substractNumbers körs";
         $this->output = $numberOne / $numberTwo;        
             $this->output = json_encode($this->output); 
             echo json_encode($this->output);
     }
     public function multiplyNumbers($numberOne, $numberTwo) {
-        echo "multiplyNumbers körs";
         $this->output = $numberOne * $numberTwo;        
             $this->output = json_encode($this->output); 
             echo json_encode($this->output);
-
     }
     abstract public function getPercentOfNumber($numberOne, $operator, $string);
-
     private function _getSquareRoot($numberOne) {
-
     }
-
 }
-
-
-
-
-
-
-
-
-

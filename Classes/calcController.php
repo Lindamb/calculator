@@ -33,17 +33,17 @@ class calcController {
 				$this->operator = "+";
 			}
 
-		} elseif (!(strpos($this->string, "-")) == false) {
+		} elseif (!(strpos($this->string, "-" && !"%")) == false) {
 			$this->operator = "-";
 			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
 
 
-		} elseif (!(strpos($this->string, "/")) == false) {
+		} elseif (!(strpos($this->string, "/" && !"%")) == false) {
 			$this->operator = "/";
 			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
  
 		
-		} elseif (!(strpos($this->string, "x")) == false) {
+		} elseif (!(strpos($this->string, "x" && !"%")) == false) {
 			$this->operator = "x";
 			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
  
@@ -69,7 +69,7 @@ class calcController {
     	
     	$objCalc = new Calculate;
 
-    	switch ($this->operator) {
+    	switch ($this->operator){
     		case "+":
     			$objCalc->addNumbers($this->numberOne, $this->numberTwo);
     			break;
@@ -83,7 +83,7 @@ class calcController {
  				$objCalc->divideNumbers($this->numberOne, $this->numberTwo);   
  				break;
  			case "%":
- 				$objCalc->getPercentOfNumber($this->numberOne, $this->operator);
+ 				$objCalc->getPercentOfNumber($this->numberOne, $this->operator, $this->string);
  				break;
  			case "√2": 
  				$objCalc->getSquareRoot($this->numberOne);

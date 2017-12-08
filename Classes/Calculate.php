@@ -6,11 +6,13 @@ class Calculate extends CalculatorAbstract {
         
         echo json_encode($this->output); 
     }
+    
     public function getPercentOfNumber($numberOne, $operator, $string){
         
         $this->operator = $operator;
         $this->string = $string;
         $this->numberOne = $numberOne;
+        
         if(!(strpos($this->numberOne, "+")) == false) {
             $this->operator = "+";
             
@@ -54,7 +56,9 @@ class Calculate extends CalculatorAbstract {
             echo json_encode($this->output); 
     }
 }    
-    final public function getSquareRoot($numberOne)  {
+    
+
+    final function getSquareRoot($numberOne)  {
         
         $this->output = sqrt($numberOne);
         

@@ -3,17 +3,26 @@ class calcController {
 	
 	private $operator;
 	protected $post; 
-	
 	public function __construct($post) {
 		$this->post = $post;
 	}
+	
+
 	public function getOperator($post) {
 		$this->string = $post;
 	    if(!(strpos($this->string, "--")) == false) {
 			$this->operator = "--";
 			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
 			$this->operator;
+			
 			if($this->operator = "--") {
+				$this->operator = "+";
+			}
+		} elseif(!(strpos($this->string, "++")) == false) {
+			$this->operator = "++";
+			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+			$this->operator;
+			if($this->operator = "++") {
 				$this->operator = "+";
 			}
 		} elseif(!(strpos($this->string, "-+")) == false) {
@@ -21,17 +30,28 @@ class calcController {
 			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
 			$this->operator;
 			$this->numberTwo;
-			if($this->operator = "-+") {
+			
+				if($this->operator = "-+") {
 				$this->operator = "+";
-			}
-		} elseif (!(strpos($this->string, "-" )) == false) {
-			$this->operator = "-";
+				}
+
+		} elseif((!(strpos($this->string, "-" )) == false) &&  (!(strpos($this->string, "%" )== false))) {
+			$this->operator = "%";
 			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
-		} elseif (!(strpos($this->string, "/")) == false) {
-			$this->operator = "/";
+		
+		} elseif ((!(strpos($this->string, "/")) == false) &&  (!(strpos($this->string, "%" )== false))) {
+			$this->operator = "%";
 			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
  
 		
+		} elseif (!(strpos($this->string, "/")) == false) {
+			$this->operator = "/";
+			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+		
+		} elseif ((!(strpos($this->string, "x")) == false)  &&  (!(strpos($this->string, "%" ) == false))) {
+			$this->operator = "%";
+			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+
 		} elseif (!(strpos($this->string, "x")) == false) {
 			$this->operator = "x";
 			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
@@ -47,7 +67,13 @@ class calcController {
 		elseif (!(strpos($this->string, "+")) == false) {
 			$this->operator = "+";
 			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+		} 
+		elseif (!(strpos($this->string, "-")) == false) {
+			$this->operator = "-";
+			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
 		}
+
+
     }
 	public function doMath ($post) {
     	$this->string = $post;

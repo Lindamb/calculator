@@ -1,5 +1,6 @@
 <?php
 include('CalculatorInterface.php');
+
 abstract class CalculatorAbstract implements CalculatorInterface {
     protected $numberOne;
     protected $numberTwo;
@@ -26,6 +27,7 @@ abstract class CalculatorAbstract implements CalculatorInterface {
             echo json_encode($this->output);
     }
     abstract public function getPercentOfNumber($numberOne, $operator, $string);
+    
     private function _getSquareRoot($numberOne) {
     }
 }

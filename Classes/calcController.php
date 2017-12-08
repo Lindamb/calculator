@@ -3,6 +3,8 @@ class calcController {
 	
 	private $operator;
 	protected $post; 
+	
+
 	public function __construct($post) {
 		$this->post = $post;
 	}
@@ -10,71 +12,67 @@ class calcController {
 
 	public function getOperator($post) {
 		$this->string = $post;
-	    if(!(strpos($this->string, "--")) == false) {
-			$this->operator = "--";
-			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
-			$this->operator;
-			
-			if($this->operator = "--") {
+	    
+
+	    switch($this->string) {
+	    	
+	    	case (!(strpos($this->string, "--")) == false):
+				$this->operator = "--";
+				list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
 				$this->operator = "+";
-			}
-		} elseif(!(strpos($this->string, "++")) == false) {
-			$this->operator = "++";
-			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
-			$this->operator;
-			if($this->operator = "++") {
+				break;
+	    	case (!(strpos($this->string, "++")) == false):
+	    		$this->operator = "++";
+				list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
 				$this->operator = "+";
-			}
-		} elseif(!(strpos($this->string, "-+")) == false) {
-			$this->operator = "-+";
-			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
-			$this->operator;
-			$this->numberTwo;
-			
-				if($this->operator = "-+") {
+				break;
+			case (!(strpos($this->string, "-+")) == false):
+				$this->operator = "-+";
+				list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+				$this->operator;
+				$this->numberTwo;
 				$this->operator = "+";
-				}
-
-		} elseif((!(strpos($this->string, "-" )) == false) &&  (!(strpos($this->string, "%" )== false))) {
-			$this->operator = "%";
-			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
-		
-		} elseif ((!(strpos($this->string, "/")) == false) &&  (!(strpos($this->string, "%" )== false))) {
-			$this->operator = "%";
-			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
- 
-		
-		} elseif (!(strpos($this->string, "/")) == false) {
-			$this->operator = "/";
-			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
-		
-		} elseif ((!(strpos($this->string, "x")) == false)  &&  (!(strpos($this->string, "%" ) == false))) {
-			$this->operator = "%";
-			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
-
-		} elseif (!(strpos($this->string, "x")) == false) {
-			$this->operator = "x";
-			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
- 
-		} elseif (!(strpos($this->string, "%")) == false) {
-			$this->operator = "%";
-			list($this->numberOne) = explode($this->operator, $this->string); 
+				break;
+			case ((!(strpos($this->string, "-" )) == false) &&  (!(strpos($this->string, "%" )== false))):
+				$this->operator = "%";
+				list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+				break;
+			case ((!(strpos($this->string, "/")) == false) &&  (!(strpos($this->string, "%" )== false))):
+				$this->operator = "%";
+				list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+				break;
+			case (!(strpos($this->string, "/")) == false):
+				$this->operator = "/";
+				list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+				break;
+			case((!(strpos($this->string, "x")) == false)  &&  (!(strpos($this->string, "%" ) == false))):
+				$this->operator = "%";
+				list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+				break;
+			case(!(strpos($this->string, "x")) == false):
+				$this->operator = "x";
+				list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+				break;
+			case(!(strpos($this->string, "%")) == false):
+				$this->operator = "%";
+				list($this->numberOne) = explode($this->operator, $this->string);
+				break;
+			case(!(strpos($this->string, "√2")) == false):
+				$this->operator = "√2";
+				list($this->numberOne) = explode($this->operator, $this->string);
+				break;
+			case(!(strpos($this->string, "+")) == false):
+				$this->operator = "+";
+				list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string);
+				break;
+			case(!(strpos($this->string, "-")) == false):
+				$this->operator = "-";
+				list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
+				break;
 		}
-		elseif (!(strpos($this->string, "√2")) == false) {
-			$this->operator = "√2";
-			list($this->numberOne) = explode($this->operator, $this->string); 
-		}
-		elseif (!(strpos($this->string, "+")) == false) {
-			$this->operator = "+";
-			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
-		} 
-		elseif (!(strpos($this->string, "-")) == false) {
-			$this->operator = "-";
-			list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string); 
-		}
+	}	
 
 
-    }
 	public function doMath ($post) {
     	$this->string = $post;
     	

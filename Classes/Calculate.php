@@ -19,29 +19,24 @@ class Calculate extends CalculatorAbstract {
                 $this->operator = "+";
                 list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string);
                 $this->output = $this->numberOne * (1 + $this->numberTwo/100);
-                // echo json_encode($this->output);
                 break;
             case (!(strpos($this->numberOne, "-")) == false):
                 $this->operator = "-";
                 list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string);
                 $this->output = $this->numberOne * (1 - $this->numberTwo / 100);
-                // echo json_encode($this->output);
                 break;
             case (!(strpos($this->numberOne, "x")) == false):
                 $this->operator = "x";
                 list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string);
                 $this->output = $this->numberOne * ($this->numberTwo / 100);
-                // echo json_encode($this->output);
                 break;
             case (!(strpos($this->numberOne, "/")) == false):
                 $this->operator = "/";                
                 list($this->numberOne, $this->numberTwo) = explode($this->operator, $this->string);
                 $this->output = $this->numberOne / ($this->numberTwo / 100);
-                // echo json_encode($this->output);
                 break;
             default:
                 $this->output = $this->numberOne / 100; 
-                // echo json_encode($this->output);
                 break;     
         }
                 echo json_encode($this->output);

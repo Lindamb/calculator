@@ -1,5 +1,6 @@
 <?php 
-class calcController {
+ 
+ class calcController {
 	
 	private $operator;
 	protected $post; 
